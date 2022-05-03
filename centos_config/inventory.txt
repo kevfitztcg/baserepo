@@ -1,0 +1,2 @@
+ansible1 ansible_host=172.16.68.132 ansible_ssh_pass=Thund3r
+ansible2 ansible_host=172.16.68.134 ansible_ssh_pass=Thund3r

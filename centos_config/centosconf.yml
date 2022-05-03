@@ -1,0 +1,27 @@
+---
+# change selinux
+- name: Set Selinux
+  selinux:
+      state: permissive
+      policy: targeted
+
+- name: disable firewall
+  service:
+      name: firewalld
+      state: stopped
+      enabled: no
+
+# Install Open VM Tools
+- name: open-vm-tools install
+  yum:
+      name: open-vm-tools
+      present: yes
+- name: start open vmware tools
+  service:
+      name: vmtoolsd
+      enabled: yes
+      state: started
+
+# Reboot
+- name: reboot box
+  reboot:
